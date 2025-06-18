@@ -30,10 +30,16 @@ const Calculator = () => {
     }
   };
 
+
+  const handleValueChange = (e) => {
+    const { value } = e.target;
+    setData(value)
+  }
+
   return (
     <>
       <div className="container">
-        <input type="text" name='calculator' value={data} />
+        <input type="text" name='calculator' onChange={handleValueChange} value={data} />
 
         <button onClick={allClear} value="AC">AC</button>
         <button onClick={getBracket} value="()">()</button>
